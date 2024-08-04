@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <title>Pagamento LiveTV</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      width: 100vw;
+      height: 100vh;
+      background: #DCDCDC;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: white;
+      border-radius: 10px;
+    }
+    .container h1 {
+      color: red;
+    }
+    .container h2 {
+      color: #2980b9;
+    }
+    .imagem img {
+      width: 80px;
+      border-radius: 80px;
+      margin-top: 60px;
+    }
+    .container p {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .copy-key {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 60px;
+    }
+    .key-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+     }
+    .copy-button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+     }
+
+    .copy-button:hover {
+      background-color: #2980b9;
+     }
+    .footer {
+      border-top: 2px solid #DCDCDC;
+      width: 100%;
+      
+     }
+    .footer p {
+      font-size: 12px;
+      margin-bottom: 3px;
+      margin-top: 20px;
+    }
+    .footer span{
+      display: block;
+      padding-bottom: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="imagem">
+      <img src="apple-touch-icon.png" alt="codetv">
+    </div>
+    <h1>Live CodeTV</h1>
+    <p style="margin: 0; padding-bottom: 30px; font-size: 10px; font-weight: bold;">A tv da sua família</p>
+    <h2>Pagamento via PIX</h2>
+    <p>Escaneie o QR Code abaixo com o aplicativo do seu banco:</p>
+    <div class="qrcode">
+      <img src="qr.png" alt="qrcode" width="200px">
+    </div>
+    <p>Ou copie a chave Pix abaixo:</p>
+    <div class="copy-key">
+      <input type="text" value="00020126580014br.gov.bcb.pix013679b3d314-7bf7-4431-b57e-b7effe0e54995204000053039865802BR5925LEICIANO DE SOUZA DA COST6008BRASILIA62070503***63046A33" class="key-input" id="pixKey" readonly>
+      <button class="copy-button" onclick="copyPixKey()">Copiar</button>
+    </div>
+    <div class="footer">
+      <p>&copy Produzido por: nemcodespace</p>
+      <span>2024 - Todos os direitos reservados</span>
+    </div>
+  </div>
+  
+  <script>
+        function copyPixKey() {
+            var copyText = document.getElementById("pixKey");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // Para dispositivos móveis
+            document.execCommand("copy");
+            alert("Chave Pix copiada: " + copyText.value);
+        }
+    </script>
+  
+  
+</body>
+</html>
